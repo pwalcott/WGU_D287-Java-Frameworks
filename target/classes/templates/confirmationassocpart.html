@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Added</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* This ensures the page takes up the full viewport height */
+        }
+    </style>
+</head>
+<body>
+<h1>Your part has been successfully added or removed</h1>
+
+<div style="margin-bottom: 50px">
+    <a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Back to the Mainscreen</a>
+</div>
+</body>
+</html>

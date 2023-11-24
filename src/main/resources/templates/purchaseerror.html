@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <title>Purchase Error</title>
+    <style>
+        /* Center the content horizontally and vertically */
+        body {
+            display: flex;
+            flex-direction: column; /* Ensure the items are stacked vertically */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Center the content within the body */
+        p {
+            font-size: 1.5em; /* Adjust the font size as needed */
+            text-align: center;
+            margin-bottom: 20px; /* Add some space between the paragraph and the button */
+        }
+
+    </style>
+</head>
+<body>
+<p>Item sold out! Try again later.</p>
+<div>
+    <a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Back to the Mainscreen</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="4;URL='mainscreen'">
+    <title>Confirm Delete</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        /* Center the content horizontally and vertically */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Center the content within the div */
+        div {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em; /* Adjust the font size as needed */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Your product has been deleted</h1>
+    <div style="margin-bottom: 50px">
+        <a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Back to the Mainscreen</a>
+    </div>
+</div>
+</body>
+</html>

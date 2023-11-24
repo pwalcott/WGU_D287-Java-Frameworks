@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Part Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .vertical-center {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+    </style>
+
+
+    <!--    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />-->
+</head>
+<body>
+<div class="container vertical-center">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <h1 style="font-size: xxx-large; margin-top: 100px; text-align: center">OutSourced Part Detail</h1>
+</head>
+<body>
+
+<form action="#" th:action="@{/showFormAddOutPart}" th:object="${outsourcedpart}" method="POST"}>
+
+    <!-- Add hidden form field to handle update -->
+    <p><input type="hidden" th:field="*{id}" /></p>
+
+    <p><input type="text" th:field="*{name}" placeholder="Name" class="form-control mb-4 col-4" size="500px"/></p>
+
+    <p><input type="text" th:field="*{price}" placeholder= "Price" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</p>
+
+    <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <p><input type="text" th:field="*{minimum}" placeholder="Minimum" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <p><input type="text" th:field="*{maximum}" placeholder="Maximum" class="form-control mb-4 col-4"/></p>
+    <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+
+    <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
+    <div th:if="${#fields.hasAnyErrors()}">
+        <ul><li th:each="err: ${#fields.allErrors()}" th:text="${err}"></li></ul>
+    </div>
+
+    <p><input type="submit" class="btn btn-primary" value="Submit" /></p>
+</form>
+</div>
+        <div style="margin-bottom: 50px; align-items: center;justify-content: center;display: flex"><a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Back to the Mainscreen</a></div>
+
+</body>
+</html>

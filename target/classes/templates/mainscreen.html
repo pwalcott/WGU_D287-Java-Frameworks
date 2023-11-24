@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <title>Oasis Optical</title>
+
+</head>
+<body>
+
+<div class="container">
+    <h1 style="font-size: xxx-large; margin-top: 100px; text-align: center">Oasis Optical Shop</h1>
+    <div style="text-align: center"><a th:href="@{/about}" class="btn btn-outline-info" style="text-align: center">Learn More About The Shop</a></div>
+    <hr>
+        <h2>Camera Parts</h2>
+    <form th:action="@{/mainscreen}">
+        Filter: <input type="text" name="partkeyword" id="partkeyword" size="80" th:value="${partkeyword}" required />
+        &nbsp;
+        <input type="submit" class="btn btn-primary" value="Search" />
+        &nbsp;
+        <input type="button" class="btn btn-primary" value="Clear" id="btnClearPart" onclick="clearSearch()" />
+    </form>
+    <br><br>
+    <a th:href="@{/showFormAddInPart}" class="btn btn-primary btn-sm mb-3" >Add Inhouse Part</a>
+    <a th:href="@{/showFormAddOutPart}" class="btn btn-primary btn-sm mb-3" >Add Outsourced Part</a>
+    <table class="table table-hover" style="border: 1px solid black; margin-bottom: 100px">
+        <thead class="table-info">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>Max Inventory #</th>
+            <th>Min Inventory #</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempPart : ${parts}">
+            <td th:text="${tempPart.name}">1</td>
+            <td th:text="${tempPart.price}">1</td>
+            <td th:text="${tempPart.inv}">1</td>
+            <td th:text="${tempPart.maximum}">1</td>
+            <td th:text="${tempPart.minimum}">1</td>
+            <td><a th:href="@{/showPartFormForUpdate(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                <a th:href="@{/deletepart(partID=${tempPart.id})}" class="btn btn-primary btn-sm mb-3"
+                   onclick="if(!(confirm('Are you sure you want to delete this part?')))return false">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h2>Camera Products</h2>
+    <form th:action="@{/mainscreen}">
+        Filter: <input type="text" name="productkeyword" id="productkeyword" size="80" th:value="${productkeyword}" required />
+        &nbsp;
+        <input type="submit" class="btn btn-primary" value="Search" />
+        &nbsp;
+        <input type="button" class="btn btn-primary" value="Clear" id="btnClearProduct" onclick="clearSearch()" />
+    </form>
+    <script type="text/javascript">
+        function clearSearch() {
+            window.location = "[[@{/}]]";
+        }
+    </script>
+    <br><br>
+    <a th:href="@{/showFormAddProduct}" class="btn btn-primary btn-sm mb-3" >Add Product</a>
+    <table class="table table-hover" style="border: 1px solid black; margin-bottom: 200px" >
+        <thead class="table-info">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Inventory</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempProduct : ${products}">
+            <td th:text="${tempProduct.name}">1</td>
+            <td th:text="${tempProduct.price}">1</td>
+            <td th:text="${tempProduct.inv}">1</td>
+            <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
+                <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
+                   onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
+                <a th:href="@{/buyproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
+                   onclick="if(!(confirm('Are you sure you want to purchase this product?')))return false">Buy Now</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

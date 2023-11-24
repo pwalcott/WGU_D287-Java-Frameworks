@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="refresh" content="4;URL='mainscreen'">
+    <title>Confirm Delete</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .centered-container {
+            height: 100vh; /* Full height of the viewport */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            flex-direction: column; /* Stack children vertically */
+            text-align: center; /* Center text for all children */
+        }
+    </style>
+</head>
+<body>
+
+<div class="centered-container">
+    <h1>Your part has been deleted</h1>
+    <div><a th:href="@{/mainscreen}" class="btn btn-primary btn-sm mb-3">Back to the Mainscreen</a></div>
+</div>
+
+</body>
+</html>

@@ -1,12 +1,12 @@
 # WESTERN GOVERNORS UNIVERSITY 
 ## D287 – JAVA FRAMEWORKS Performance Assessment
 
-### Student Name: Pia Walcott | Student ID: 010591538 | Email: pwalco2@wgu.edu 
+### Student Name: Pia Walcott
 ### Bachelor of Science, Software Engineering, Term 3
 
 Task C:
 
-> - Created a new CSS file: bootstap.min.css<br>
+> - Created a new CSS file: bootstrap.min.css<br>
 > - Edits made to mainscreen.html:<br>
 > Line 11: Changed the CSS styling<br>
 > Line 13: Changed the title of the shop to "Oasis Optical"<br>
